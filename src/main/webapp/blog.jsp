@@ -31,7 +31,7 @@
 			<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
-			<a href="http://www.google.com"><div id="newpost">NEW POST</div></a>
+			<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
 			<a href="http://www.google.com"><div id="login">LOG IN</div></a>
 			<div id="signinbox"></div>
 			<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
