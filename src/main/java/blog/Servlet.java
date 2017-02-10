@@ -23,7 +23,7 @@ public class Servlet extends HttpServlet{
 
           resp.setContentType("text/plain");
 
-          resp.getWriter().println("Shit");
+          resp.getWriter().println("Hello");
 
       } else {
 

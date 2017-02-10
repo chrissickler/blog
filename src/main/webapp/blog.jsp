@@ -26,6 +26,7 @@
 	</head>
 	
 	<body>
+		
 		<div id="navbar">
 			<a href="http://www.google.com"><div class="navbarbuttons"; id="home">HOME</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
@@ -45,7 +46,7 @@
 		<div id="wallpaper2"></div>
 		<div id="banner">This is a blog about Chris's... So... Post your stuff about Chris's.</div>
 		<div id="floatingtext"><strong>CHRIS OF THE DAY</strong></div>
-		<div id="floatingtext2"><strong>CHRIS IN THE NEWS</strong></div>		
+		<div id="floatingtext2"><strong>LATEST BLOG POSTS</strong></div>		
 		<div id="leftpic"; class="twomainpix"><img src="http://www.trbimg.com/img-56d31ec6/turbine/la-bio-chris-megerian/400/400x225" /></div>
 		<div id="leftpicback"></div>
 		<div id="rightpic"; class="twomainpix"><img src="http://www.hortoncomponents.com/images/stockprogram2.jpg" /></div>
