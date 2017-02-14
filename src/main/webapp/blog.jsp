@@ -33,7 +33,28 @@
 			<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
 			<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
-			<a href="loginpage.jsp"><div id="login">LOG IN</div></a>
+			
+			
+			<%
+				String userName = request.getParameter("userName");
+				if(userName == null){
+					userName = "default";
+				}
+				pageContext.setAttribute("userName", userName);
+				UserService userService = UserServiceFactory.getUserService();
+			    User user = userService.getCurrentUser();
+			    if (user != null) {
+			        pageContext.setAttribute("user", user);
+			%>
+			<a href="<%= userService.createLogoutURL(request.getRequestURL()) %>"><div id="logout">LOG OUT</div></a>
+			<%
+			    }else{
+			%>
+			<a href="<%= userService.createLoginURL(request.getRequestURL()) %>"><div id="login">LOG IN</div></a>
+			<%
+			    }
+			%>
+			
 			<div id="signinbox"></div>
 			<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
 			<a href="http://www.google.com"><div id="searchword">Search</div></a>
@@ -51,5 +72,10 @@
 		<div id="leftpicback"></div>
 		<div id="rightpic"; class="twomainpix"><img src="http://www.hortoncomponents.com/images/stockprogram2.jpg" /></div>
 		<div id="rightpicback"></div>
+		
+		<form action= "/blog.jsp" method= "get">
+			
+		</form>
+		
 	</body>
 <html>
