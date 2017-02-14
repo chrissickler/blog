@@ -4,7 +4,7 @@
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
-<%@ tag
+
 <html>
 	<head>
 		<title>ChriSquared</title>
@@ -19,8 +19,8 @@
 			<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
-			<a href="http://www.google.com"><div id="newpost">NEW POST</div></a>
-			<a href="http://www.google.com"><div id="login">LOG IN</div></a>
+			<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
+			<a href="loginpage.jsp"><div id="login">LOG IN</div></a>
 			<div id="signinbox"></div>
 			<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
 			<a href="http://www.google.com"><div id="searchword">Search</div></a>
@@ -29,26 +29,31 @@
 		<div id="navbar2">
 			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
 		</div>
+		<div id="wallpaper"></div>
+		<div id="wallpaper2"></div>
 		<%
-		    UserService userService = UserServiceFactory.getUserService();		
-		    User user = userService.getCurrentUser();		
-		    if (user != null) {		
-		      pageContext.setAttribute("user", user);
+		    UserService userService = UserServiceFactory.getUserService();
+		    User user = userService.getCurrentUser();
+		    if (user != null) {
+		        pageContext.setAttribute("user", user);
 		%>
-		<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
-		<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>		
-		<%		
-		    } else {		
-		%>		
-		<p>Hello!		
-		<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-		to include your name with greetings you post.</p>
+		
+		<p>/n/n/n/n/nYou are already signed in, ${fn:escapeXml(user.nickname)}! (You can
+		    <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+		<%
+		    } else {
+		%>
+		<p>/n/n/n/n/nHello!
+		    <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
+		    to include your name in your post.</p>
 		<%
 		    }
 		%>
-		<form action="/sign" method="post">
-	  		<div><textarea name="content" rows="3" cols="60"></textarea></div>
-	   		<div><input type="submit" value="Post Greeting" /></div>
-		</form>
+		
+		
+		
+		
+		
+		
 	</body>
 </html>
