@@ -64,13 +64,15 @@ public class CronServlet extends HttpServlet{
 			        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + " posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
 			        	 }
 			         }
-			         
-			         // Now set the actual message
-			         message.setText(text);
+			         if(text != ""){
+			        	// Now set the actual message
+				         message.setText(text);
 
-			         // Send message
-			         Transport.send(message);
-			         System.out.println("Sent message successfully....");
+				         // Send message
+				         Transport.send(message);
+				         System.out.println("Sent message successfully....");
+			         }
+			         
 			      }catch (MessagingException mex) {
 			         mex.printStackTrace();
 			      }
