@@ -35,25 +35,7 @@
 			<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
 			
 			
-			<%
-				String userName = request.getParameter("userName");
-				if(userName == null){
-					userName = "default";
-				}
-				pageContext.setAttribute("userName", userName);
-				UserService userService = UserServiceFactory.getUserService();
-			    User user = userService.getCurrentUser();
-			    if (user != null) {
-			        pageContext.setAttribute("user", user);
-			%>
-			<a href="<%= userService.createLogoutURL(request.getRequestURL()) %>"><div id="logout">LOG OUT</div></a>
-			<%
-			    }else{
-			%>
-			<a href="<%= userService.createLoginURL(request.getRequestURL()) %>"><div id="login">LOG IN</div></a>
-			<%
-			    }
-			%>
+			
 			
 			<div id="signinbox"></div>
 			<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
