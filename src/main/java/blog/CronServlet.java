@@ -10,6 +10,8 @@ import javax.activation.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+
+
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
@@ -31,51 +33,24 @@ public class CronServlet extends HttpServlet{
 			List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
 			for(Entity e : emails){
 				to = (String) e.getProperty("email");
-				 // Assuming you are sending email from localhost
-			      String host = "localhost";
+				// set credentials
+				Sendgrid mail = new Sendgrid("christobear","Password1!");
+				String text = "";
+		         List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
+		         Date date = new Date();
+		         for(Entity post: posts){
+		        	 
+		        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
+		        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
+		        	 }
+		         }
+				// set email data
+				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text).setHtml("<strong>ChriSquared!</strong>");
 
-			      // Get system properties
-			      Properties properties = System.getProperties();
-
-			      // Setup mail server
-			      properties.setProperty("mail.smtp.host", host);
-
-			      // Get the default Session object.
-			      Session session = Session.getDefaultInstance(properties);
-
-			      try {
-			         // Create a default MimeMessage object.
-			         MimeMessage message = new MimeMessage(session);
-
-			         // Set From: header field of the header.
-			         message.setFrom(new InternetAddress(from));
-
-			         // Set To: header field of the header.
-			         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-			         // Set Subject: header field
-			         message.setSubject("Blog entries from the last 24 hours");
-
-			         String text = "";
-			         List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
-			         Date date = new Date();
-			         for(Entity post: posts){
-			        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
-			        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + " posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
-			        	 }
-			         }
-			         if(text != ""){
-			        	// Now set the actual message
-				         message.setText(text);
-
-				         // Send message
-				         Transport.send(message);
-				         System.out.println("Sent message successfully....");
-			         }
-			         
-			      }catch (MessagingException mex) {
-			         mex.printStackTrace();
-			      }
+				// send your message
+				if(text != ""){
+					mail.send();
+				}
 			}
 			//END
 		}
