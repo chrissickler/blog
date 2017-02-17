@@ -9,7 +9,15 @@
     <servlet-name>Servlet</servlet-name>
     <url-pattern>/blog</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>sign</servlet-name>
+    <servlet-class>blog.Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sign</servlet-name>
+    <url-pattern>/sign</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>blog.jsp</welcome-file>
+    <welcome-file>NewPost.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

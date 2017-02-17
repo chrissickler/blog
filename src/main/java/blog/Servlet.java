@@ -15,6 +15,11 @@ import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 
 import com.google.appengine.api.users.UserServiceFactory;
+
+import blog.Greeting;
+
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 import java.io.IOException;
 
 import java.util.Date;
@@ -50,9 +55,9 @@ public class Servlet extends HttpServlet{
 
      // Guestbook should be limited to ~1/second.
 
-     String guestbookName = req.getParameter("guestbookName");
+     String userName = req.getParameter("userName");
 
-     Key guestbookKey = KeyFactory.createKey("Guestbook", guestbookName);
+     Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
 
      String content = req.getParameter("content");
 
@@ -74,8 +79,23 @@ public class Servlet extends HttpServlet{
 
 
 
-     resp.sendRedirect("/blog.jsp?guestbookName=" + guestbookName);
+     resp.sendRedirect("/blog.jsp?userName=" + userName);
 
  }
 
 }
+
+
+
+
+
+// copied from ofysignguestbookservlet
+
+//Greeting greet = new Greeting(user, content);
+
+//ofy().save().entity(greet).now();
+
+
+
+
+

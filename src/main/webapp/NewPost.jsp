@@ -29,14 +29,32 @@
 <html>
 
   <head>
-    <link type="text/css" rel="stylesheet" href="/stylesheets/NewPost.css" />
+    <title>New Post</title>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/NewPost.css" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="http://www.example.com/myicon.ico"/> 
   </head>
 
- 
-
   <body>
-
- 
+ 	<div id="navbar">
+		<a href="http://www.google.com"><div class="navbarbuttons"; id="home">HOME</div></a>
+		<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
+		<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
+		<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
+		<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
+		<a href="loginpage.jsp"><div id="login">LOG IN</div></a>
+		<div id="signinbox"></div>
+		<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
+		<a href="http://www.google.com"><div id="searchword">Search</div></a>
+		<div id="searchbox"></div>
+	</div>
+	
+	<div id="navbar2">
+			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
+	</div>
+	<div id="wallpaper"></div>
+	<div id="wallpaper2"></div>
 
 <%
 
@@ -60,9 +78,9 @@
 
 %>
 
-<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
+<div id="greeting"><p>Hello, ${fn:escapeXml(user.nickname)}! (You can
 
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p></div>
 
 <%
 
@@ -70,11 +88,11 @@
 
 %>
 
-<p>Hello!
+<div id="greeting"><p>Hello!
 
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 
-to include your name with greetings you post.</p>
+to include your name with greetings you post.</p> </div>
 
 <%
 
@@ -102,7 +120,7 @@ to include your name with greetings you post.</p>
 
         %>
 
-        <p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p>
+        <div id="nomessages"><p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p></div>
 
         <%
 
@@ -158,11 +176,11 @@ to include your name with greetings you post.</p>
 
     <form action="/sign" method="post">
 
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div id="newposttext"><textarea name="content" rows="3" cols="60"></textarea></div>
 
-      <div><input type="submit" value="Post Greeting" /></div>
+      <div id="postbutton"><input type="submit" value="Post Greeting" /></div>
 
-      <input type="hidden" name="guestbookName" value="${fn:escapeXml(userName)}"/>
+      <input type="hidden" name="userName" value="${fn:escapeXml(userName)}"/>
 
     </form>
 
