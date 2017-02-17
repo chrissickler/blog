@@ -20,7 +20,7 @@ public class SubscribeServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String content = req.getParameter("content");
-		Entity email = new Entity("Email");
+		Entity email = new Entity("Email",content);
 		email.setProperty("email", content);
 		emailList.put(email);
 		resp.sendRedirect("/blog.jsp");

@@ -22,8 +22,6 @@ public class UnsubscribeServlet extends HttpServlet{
 		DatastoreService emailList = SubscribeServlet.emailList;
 		String content = req.getParameter("content");
 		Key emailKey = KeyFactory.createKey("Email", content);
-		Entity email = new Entity("Email",emailKey);
-		email.setProperty("email", content);
 		emailList.delete(emailKey);
 		resp.sendRedirect("/blog.jsp");
 	}
