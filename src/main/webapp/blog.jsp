@@ -101,7 +101,7 @@
 		
 			            %>
 		
-			            <div class="titlebox">
+			            <div class="titles">
 			            	<blockquote>${fn:escapeXml(title_content)}</blockquote>
 			            </div>
 		

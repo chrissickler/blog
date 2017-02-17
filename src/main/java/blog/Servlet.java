@@ -50,8 +50,14 @@ public class Servlet extends HttpServlet{
 		Date date = new Date();
 		Entity greeting = new Entity("Greeting", guestbookKey);
 		greeting.setProperty("user", user);
+		if (user.equals("")) {
+			greeting.setProperty("user", "anonymous");
+		}
 		greeting.setProperty("date", date);
 		greeting.setProperty("title", title);
+		if (title.equals("")) {
+			greeting.setProperty("title", "untitled");
+		}
 		greeting.setProperty("postContent", postContent);
 		datastore = DatastoreServiceFactory.getDatastoreService();
 		datastore.put(greeting);

@@ -4,7 +4,7 @@
 	height: 1000px;
 	left: 0px;
 	top: 0px;
-	background: linear-gradient(white, white);
+	background: linear-gradient(#000000, white);
 	z-index: -1;
 }
 
@@ -119,18 +119,6 @@
 }
 
 
-#signinbox {
-	position: fixed;
-	margin-top: -57px;
-	margin-left: 807px;
-	height: 55px;
-	width: 500px;
-	background-color: black;
-	z-index: 2;
-	border: 1px solid #CACACA;
-}
-
-
 
 #navbar2 {
 	width: 100px;
@@ -151,109 +139,59 @@
 	
 }
 
-#banner {
-	width: 1060px;
-	height: 28px;
+#post {
 	position: absolute;
-	top:90px;
-	left:110px;
-	background-color: #00a2e8;
+	top: 100px;
+	left: 100px;
+	z-index: 3;
 	color: white;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;	
-	padding-top: 10px;
-	padding-bottom: -5px;
-	padding-left: 30px;
+	
 }
 
-#leftpicback {
-	height: 380px;
-	width: 800px;
-	background-color: white;
+#greeting {
 	position: absolute;
-	left: 110px;
-	top: 200px;
-	z-index: 0;
-}
-
-#leftpic img{
-	height: 380px;
-	position: absolute;
-	left: 10px;
-	top: 200px;
-	clip: rect(0px,900px,1000px,100px);
-	box-shadow: 0px 0px 10px black;
-	z-index: 1;
-}
-
-#leftpic:hover img{
-	opacity: 0.9;
-}
-
-#rightpic img {
-	width: 259px;
-	height: 380px;
-	position: absolute;
-	left: 940px;
-	top: 200px;
-	box-shadow: 0px 0px 10px black;
-	z-index: 1;
-}
-
-#rightpickback {
-	height: 380px;
-	width: 259px;
-	background-color: white;
-	position: absolute;
-	left: 940px;
-	top: 200px;
-	z-index: 0;
-}
-
-#rightpic:hover img {
-	opacity: 0.9;
-}
-
-#floatingtext {
-	position: absolute;
-	top: 170px;
-	left: 110px;
-	font-family: 'Open Sans', sans-serif;
+	top: 100px;
+	left: 100px;
+	height: 100px;
+	width: 400px;
+	z-index: 3;
 	color: white;
-	font-size: 14px;
 }
 
-#floatingtext2 {
+a:visited {
+    color: white;
+}
+
+
+#nomessages {
 	position: absolute;
-	top: 170px;
-	left: 940px;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-size: 14px;
+	top: 100px;
+	left: 100px;
+	z-index: 3;
+	color: white	
 }
 
-div.titlebox {
-    position: absolute;
-    top: 200px;
-    left: 940px;
-    width: 200px;
-    height: 100px;
-    border: 3px solid #73AD21;
+#newposttitle {
+	position: absolute;
+	top: 150px;
+	left: 100px;
+	z-index: 3;
+	
+}
+
+#newposttext {
+	position: absolute;
+	top: 200px;
+	left: 100px;
 	z-index: 3;
 }
 
-div.titles {
-	position: relative;
-    width: 100px;
-    height: 25px;
-    top: 200px;
-    left: 900px;
-    z-index: 3;
+#postbutton {
+	position: absolute;
+	top: 275px;
+	left: 100px;
+	z-index: 3;
 }
-
-
-
-
 
 
 
