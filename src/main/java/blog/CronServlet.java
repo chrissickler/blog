@@ -5,6 +5,8 @@ import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import com.google.appengine.api.datastore.DatastoreService;
+
 public class CronServlet extends HttpServlet{
 	private static final Logger _logger = Logger.getLogger(CronServlet.class.getName());
 	
@@ -13,6 +15,8 @@ public class CronServlet extends HttpServlet{
 			_logger.info("Cron Job has been executed");
 			//Put your logic here
 			//BEGIN
+			DatastoreService datastore = Servlet.datastore;
+			
 			//END
 		}
 		catch (Exception ex) {

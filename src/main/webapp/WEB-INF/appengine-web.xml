@@ -3,6 +3,6 @@
 
 	<threadsafe>true</threadsafe>
 	<sessions-enabled>false</sessions-enabled>
-	<application>blog-158718</application>
+	<application>blog-159016</application>
     <version>1</version>
 </appengine-web-app>
