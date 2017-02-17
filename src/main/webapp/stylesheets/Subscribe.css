@@ -75,7 +75,7 @@
 	background-color: #999999;	
 }
 
-#login {
+#subscribe {
 	color:black;
 	background-color:#DADADA;
 	border-radius: 3px;
@@ -93,7 +93,28 @@
 	transition: 0.2s ease;
 }
 
-#login:hover {
+#subscribe:hover {
+	background-color: #EEEEEE;
+}
+#unsubscribe {
+	color:black;
+	background-color:#DADADA;
+	border-radius: 3px;
+	height: 25px;
+	width: 60px;
+	position: absolute;
+	top: 12px;
+	left: 1000px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	padding-left: 19px;
+	padding-top: 7px;
+	box-shadow: 0px 0px 2px #222222;
+	z-index: 3;
+	transition: 0.2s ease;
+}
+
+#unsubscribe:hover {
 	background-color: #EEEEEE;
 }
 #signinbox {
@@ -103,35 +124,6 @@
 	height: 55px;
 	width: 500px;
 	background-color: black;
-	z-index: 2;
-	border: 1px solid #CACACA;
-}
-
-#searchlogo img{
-	position: absolute;
-	top: 22px;
-	left: 1100px;
-	height: 14px;
-	z-index: 3;
-}
-
-#searchword {
-	position: absolute;
-	top: 21px;
-	left: 1118px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
-	color: white;
-	z-index: 3;
-}
-
-#searchbox {
-	position: fixed;
-	margin-top: -57px;
-	margin-left: 1015px;
-	height: 55px;
-	width: 500px;
-	background-color: #000000;
 	z-index: 2;
 	border: 1px solid #CACACA;
 }

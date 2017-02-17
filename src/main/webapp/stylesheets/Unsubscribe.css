@@ -4,7 +4,7 @@
 	height: 1000px;
 	left: 0px;
 	top: 0px;
-	background: linear-gradient(white, white);
+	background: linear-gradient(#000000, white);
 	z-index: -1;
 }
 
@@ -117,8 +117,6 @@
 #unsubscribe:hover {
 	background-color: #EEEEEE;
 }
-
-
 #signinbox {
 	position: fixed;
 	margin-top: -57px;
@@ -129,7 +127,6 @@
 	z-index: 2;
 	border: 1px solid #CACACA;
 }
-
 
 
 #navbar2 {
@@ -150,115 +147,16 @@
 	margin-top: 13px;
 	
 }
-
-#banner {
-	width: 1060px;
-	height: 28px;
+#emailtext {
 	position: absolute;
-	top:90px;
-	left:110px;
-	background-color: #00a2e8;
-	color: white;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;	
-	padding-top: 10px;
-	padding-bottom: -5px;
-	padding-left: 30px;
+	top: 400px;
+	left: 200px;
+	z-index: 3;
 }
 
-#leftpicback {
-	height: 380px;
-	width: 800px;
-	background-color: white;
+#button {
 	position: absolute;
-	left: 110px;
-	top: 200px;
-	z-index: 0;
+	top: 500px;
+	left: 200px;
+	z-index: 3;
 }
-
-#leftpic img{
-	height: 380px;
-	position: absolute;
-	left: 10px;
-	top: 200px;
-	clip: rect(0px,900px,1000px,100px);
-	box-shadow: 0px 0px 10px black;
-	z-index: 1;
-}
-
-#leftpic:hover img{
-	opacity: 0.9;
-}
-
-#rightpic img {
-	width: 259px;
-	height: 380px;
-	position: absolute;
-	left: 940px;
-	top: 200px;
-	box-shadow: 0px 0px 10px black;
-	z-index: 1;
-}
-
-#rightpickback {
-	height: 380px;
-	width: 259px;
-	background-color: white;
-	position: absolute;
-	left: 940px;
-	top: 200px;
-	z-index: 0;
-}
-
-#rightpic:hover img {
-	opacity: 0.9;
-}
-
-#floatingtext {
-	position: absolute;
-	top: 170px;
-	left: 110px;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-size: 14px;
-}
-
-#floatingtext2 {
-	position: absolute;
-	top: 170px;
-	left: 940px;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-size: 14px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -33,14 +33,10 @@
 			<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 			<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
 			<a href="NewPost.jsp"><div id="newpost">NEW POST</div></a>
-			
-			
-			
-			
+			<a href="Subscribe.jsp"><div id="subscribe">SUBSCRIBE</div></a>	
+			<a href="Unsubscribe.jsp"><div id="unsubscribe">UNSUBSCRIBE</div></a>		
 			<div id="signinbox"></div>
-			<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
-			<a href="http://www.google.com"><div id="searchword">Search</div></a>
-			<div id="searchbox"></div>
+			
 		</div>
 		<div id="navbar2">
 			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>

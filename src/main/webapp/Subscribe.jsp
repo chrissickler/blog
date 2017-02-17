@@ -26,7 +26,7 @@
 
   <head>
     <title>New Post</title>
-	<link type="text/css" rel="stylesheet" href="/stylesheets/NewPost.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/Subscribe.css" />
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,100' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="http://www.example.com/myicon.ico"/> 
@@ -38,12 +38,11 @@
 		<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
-		<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
-		<a href="loginpage.jsp"><div id="login">LOG IN</div></a>
+		<a href="NewPost.jsp"><div id="newpost">NEW POST</div></a>
+		<a href="Subscribe.jsp"><div id="subscribe">SUBSCRIBE</div></a>
+		<a href="Unsubscribe.jsp"><div id="unsubscribe">UNSUBSCRIBE</div></a>
 		<div id="signinbox"></div>
-		<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
-		<a href="http://www.google.com"><div id="searchword">Search</div></a>
-		<div id="searchbox"></div>
+		
 	</div>
 	
 	<div id="navbar2">

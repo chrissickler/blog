@@ -14,15 +14,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SubscribeServlet extends HttpServlet{
+public class UnsubscribeServlet extends HttpServlet{
 	
-	public static DatastoreService emailList = DatastoreServiceFactory.getDatastoreService();
+	
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		DatastoreService emailList = SubscribeServlet.emailList;
 		String content = req.getParameter("content");
-		Entity email = new Entity("Email");
+		Key emailKey = KeyFactory.createKey("Email", content);
+		Entity email = new Entity("Email",emailKey);
 		email.setProperty("email", content);
-		emailList.put(email);
+		emailList.delete(emailKey);
 		resp.sendRedirect("/blog.jsp");
 	}
 }
