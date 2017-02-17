@@ -102,7 +102,7 @@
 			            %>
 		
 			            <div class="titlebox">
-			            	<div id="titles"><blockquote>${fn:escapeXml(title_content)}</blockquote></div>
+			            	<div class="titles"><blockquote>${fn:escapeXml(title_content)}</blockquote></div>
 			            </div>
 		
 			            <%
