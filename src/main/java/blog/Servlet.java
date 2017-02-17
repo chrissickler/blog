@@ -42,8 +42,8 @@ public class Servlet extends HttpServlet{
      // Greetings for a given Guestbook.  However, the write rate to each
      // Guestbook should be limited to ~1/second.
 
-		String guestbookName = req.getParameter("guestbookName");
-		Key guestbookKey = KeyFactory.createKey("Guestbook", guestbookName);
+		String userName = req.getParameter("userName");
+		Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
 		String content = req.getParameter("content");
 		Date date = new Date();
 		Entity greeting = new Entity("Greeting", guestbookKey);
@@ -52,7 +52,7 @@ public class Servlet extends HttpServlet{
 		greeting.setProperty("content", content);
 		datastore = DatastoreServiceFactory.getDatastoreService();
 		datastore.put(greeting);
-		resp.sendRedirect("/blog.jsp?guestbookName=" + guestbookName);
+		resp.sendRedirect("/blog.jsp?userName=" + userName);
 	}
 
 }
