@@ -32,7 +32,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends HttpServlet{
 	
 	public static DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-
+	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		UserService userService = UserServiceFactory.getUserService();
 		User user = userService.getCurrentUser();

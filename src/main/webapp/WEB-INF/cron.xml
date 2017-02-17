@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
 	<cron>
-		<url>/blog</url>
+		<url>/cronblog</url>
 		<description>daily email update</description>
-		<schedule>every 24 hours at 5:00pm</schedule>
+		<schedule>every 24 hours 17:00</schedule>
 		<timezone>America/Chicago</timezone>
 	</cron>
 </cronentries>

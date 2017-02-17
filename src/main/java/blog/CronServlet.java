@@ -15,7 +15,7 @@ public class CronServlet extends HttpServlet{
 			_logger.info("Cron Job has been executed");
 			//Put your logic here
 			//BEGIN
-			DatastoreService datastore = Servlet.datastore;
+			DatastoreService emailList = SubscribeServlet.emailList;
 			
 			//END
 		}
