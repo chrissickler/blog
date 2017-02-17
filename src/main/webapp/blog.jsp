@@ -56,7 +56,67 @@
 		<div id="rightpicback"></div>
 		
 		<%
+			String title = request.getParameter("title");
 		
+			if (title == null) {
+				
+				title = "default";
+				
+			}
+			
+			pageContext.setAttribute("title", title);
+				
+			UserService userService = UserServiceFactory.getUserService();
+			
+			User user = userService.getCurrentUser();
+			
+			if (user != null) {
+			
+		    	pageContext.setAttribute("title", title);
+			
+		    	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+			
+		    	Key guestbookKey = KeyFactory.createKey("Guestbook", title);
+			
+		    	// Run an ancestor query to ensure we see the most up-to-date
+			
+		    	// view of the Greetings belonging to the selected Guestbook.
+			
+		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
+			
+		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
+				
+		    	if (titles.isEmpty()) {
+
+		    	    %>
+		
+		    	    <p>Empty right now</p>
+		
+		    	    <%
+
+		    	} else {
+		
+			        for (Entity greeting : titles) {
+		
+			            pageContext.setAttribute("title_content",
+		
+			                                     greeting.getProperty("title"));
+		
+		
+			            %>
+		
+			            <blockquote>${fn:escapeXml(title_content)}</blockquote>
+		
+			            <%
+		
+			        }
+		
+			    }
+			}	    
+			%>
+			
+			<%
+			
 		    String userName = request.getParameter("userName");
 		
 		    if (userName == null) {
@@ -67,88 +127,79 @@
 		
 		    pageContext.setAttribute("userName", userName);
 		
-		    UserService userService = UserServiceFactory.getUserService();
-		
-		    User user = userService.getCurrentUser();
-		
+		   
 		    if (user != null) {
 		
-		      pageContext.setAttribute("user", user);
+		    	pageContext.setAttribute("user", user);
 		
-		%>
+		    	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		
-		<%
+		    	Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
+		
+		    	// Run an ancestor query to ensure we see the most up-to-date
+		
+		    	// view of the Greetings belonging to the selected Guestbook.
+		
+		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
+		
+		    	List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
+		
+		    	if (greetings.isEmpty()) {
 
-    	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		    	    %>
+		
+		    	    <div id="nomessages"><p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p></div>
+		
+		    	    <%
 
-    	Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
-
-    	// Run an ancestor query to ensure we see the most up-to-date
-
-    	// view of the Greetings belonging to the selected Guestbook.
-
-    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
-
-    	List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
-
-    	if (greetings.isEmpty()) {
-
-    	    %>
-
-    	    <div id="nomessages"><p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p></div>
-
-    	    <%
-
-    	} else {
-
-    	    %>
-
-    	    <p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p>
+		    	} else {
+		
+		    	    %>
+		
+		    	    <p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p>
+			
+			        <%
+		
+			        for (Entity greeting : greetings) {
+		
+			            pageContext.setAttribute("greeting_content",
+		
+			                                     greeting.getProperty("title"));
+		
+			            if (greeting.getProperty("user") == null) {
+		
+			                %>
+		
+			                <p>An anonymous person wrote:</p>
+		
+			                <%
+		
+			            } else {
+		
+		                	pageContext.setAttribute("greeting_user",
+		
+			                                         greeting.getProperty("user"));
+		
+			                %>
+		
+			                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
+		
+			                <%
+		
+			            }
+		
+			            %>
+		
+			            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+		
+			            <%
+		
+			        }
+		
+			    }
+			}	    
+			%>
 	
-	        <%
-
-	        for (Entity greeting : greetings) {
-
-	            pageContext.setAttribute("greeting_content",
-
-	                                     greeting.getProperty("content"));
-
-	            if (greeting.getProperty("user") == null) {
-
-	                %>
-
-	                <p>An anonymous person wrote:</p>
-
-	                <%
-
-	            } else {
-
-                	pageContext.setAttribute("greeting_user",
-
-	                                         greeting.getProperty("user"));
-
-	                %>
-
-	                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
-
-	                <%
-
-	            }
-
-	            %>
-
-	            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-
-	            <%
-
-	        }
-
-	    }
-		    }
-		    
-
-	%>
-		
 		
 		
 		

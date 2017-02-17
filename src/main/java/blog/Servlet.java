@@ -45,11 +45,14 @@ public class Servlet extends HttpServlet{
 		String userName = req.getParameter("userName");
 		Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
 		String[] content = req.getParameterValues("content");
+		String title = content[0];
+		String postContent = content[1];
 		Date date = new Date();
 		Entity greeting = new Entity("Greeting", guestbookKey);
 		greeting.setProperty("user", user);
 		greeting.setProperty("date", date);
-		greeting.setProperty("content", content);
+		greeting.setProperty("title", title);
+		greeting.setProperty("postContent", postContent);
 		datastore = DatastoreServiceFactory.getDatastoreService();
 		datastore.put(greeting);
 		resp.sendRedirect("/blog.jsp?userName=" + userName);
