@@ -44,7 +44,7 @@ public class Servlet extends HttpServlet{
 
 		String userName = req.getParameter("userName");
 		Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
-		String content = req.getParameter("content");
+		String[] content = req.getParameterValues("content");
 		Date date = new Date();
 		Entity greeting = new Entity("Greeting", guestbookKey);
 		greeting.setProperty("user", user);

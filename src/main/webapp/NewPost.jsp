@@ -42,8 +42,7 @@
 		<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
-		<a href="NewPost.html"><div id="newpost">NEW POST</div></a>
-		<a href="loginpage.jsp"><div id="login">LOG IN</div></a>
+		<a href="NewPost.jsp"><div id="newpost">NEW POST</div></a>
 		<div id="signinbox"></div>
 		<a href="http://www.google.com"><div id="searchlogo"><img src="http://www.clker.com/cliparts/9/g/p/H/1/F/search-icon-dark-grey-md.png" /></div></a>
 		<a href="http://www.google.com"><div id="searchword">Search</div></a>
@@ -55,6 +54,7 @@
 	</div>
 	<div id="wallpaper"></div>
 	<div id="wallpaper2"></div>
+
 
 <%
 
@@ -92,7 +92,7 @@
 
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 
-to include your name with greetings you post.</p> </div>
+to include your name with greetings you post.</p></div>
 
 <%
 
@@ -102,81 +102,18 @@ to include your name with greetings you post.</p> </div>
 
  
 
-<%
 
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-
-    Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
-
-    // Run an ancestor query to ensure we see the most up-to-date
-
-    // view of the Greetings belonging to the selected Guestbook.
-
-    Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
-
-    List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
-
-    if (greetings.isEmpty()) {
-
-        %>
-
-        <div id="nomessages"><p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p></div>
-
-        <%
-
-    } else {
-
-        %>
-
-        <p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p>
-
-        <%
-
-        for (Entity greeting : greetings) {
-
-            pageContext.setAttribute("greeting_content",
-
-                                     greeting.getProperty("content"));
-
-            if (greeting.getProperty("user") == null) {
-
-                %>
-
-                <p>An anonymous person wrote:</p>
-
-                <%
-
-            } else {
-
-                pageContext.setAttribute("greeting_user",
-
-                                         greeting.getProperty("user"));
-
-                %>
-
-                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
-
-                <%
-
-            }
-
-            %>
-
-            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-
-            <%
-
-        }
-
-    }
-
-%>
+ 
 
  
 
     <form action="/sign" method="post">
 
-      <div id="newposttext"><textarea name="content" rows="3" cols="60"></textarea></div>
+	  <div id="post"><a>Post your stuff here!</a></div>
+
+	  <div id="newposttitle"><textarea name="content" rows="1" cols="60"></textarea></div>
+	
+	  <div id="newposttext"><textarea name="content" rows="3" cols="60"></textarea></div>
 
       <div id="postbutton"><input type="submit" value="Post Greeting" /></div>
 

@@ -4,7 +4,7 @@
 	height: 1000px;
 	left: 0px;
 	top: 0px;
-	background: linear-gradient(#000000, white);
+	background: linear-gradient(white, white);
 	z-index: -1;
 }
 
@@ -63,11 +63,12 @@
 	left: 822px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	padding-left: 21px;
+	padding-left: 14px;
+	padding-right: 7px;
 	padding-top: 7px;
-	box-shadow: 0px 0px 2px darkgrey;	
-	transition: 0.2s ease;
+	box-shadow: 0px 0px 2px darkgrey;
 	z-index: 3;
+	transition: 0.2s ease;
 }
 
 #newpost:hover {
