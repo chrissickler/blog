@@ -60,9 +60,8 @@ public class CronServlet extends HttpServlet{
 			         List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
 			         Date date = new Date();
 			         for(Entity post: posts){
-			        	 
 			        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
-			        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
+			        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + " posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
 			        	 }
 			         }
 			         
