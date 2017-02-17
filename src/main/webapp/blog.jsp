@@ -80,7 +80,7 @@
 			
 		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
 			
-		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
+		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));
 				
 		    	if (titles.isEmpty()) {
 
@@ -101,7 +101,9 @@
 		
 			            %>
 		
-			            <blockquote>${fn:escapeXml(title_content)}</blockquote>
+			            <div class="titlebox">
+			            	<div id="titles"><blockquote>${fn:escapeXml(title_content)}</blockquote></div>
+			            </div>
 		
 			            <%
 		
