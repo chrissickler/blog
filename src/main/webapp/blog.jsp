@@ -102,7 +102,7 @@
 
 		    	} else {
 		
-			        for (int i = titleList.size() - 1; i >= titleList.size() - 1 - 11; i--) {
+			        for (int i = titleList.size() - 1; i >= 0; i--) {
 		
 			            pageContext.setAttribute("title_content",
 		
