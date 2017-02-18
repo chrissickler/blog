@@ -27,15 +27,15 @@ public class CronServlet extends HttpServlet{
 			//BEGIN
 			DatastoreService emailList = SubscribeServlet.emailList;
 			DatastoreService datastore = Servlet.datastore;
-//			Query query = new Query();
+//			Query query = new Query("Email");
 //			String text = "";
 //	        List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
 //	        Date date = new Date();
 //	        for(Entity post: posts){
 //	        	 
-//	        	if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
+//	        	//if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
 //	        		text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
-//	        	}
+//	        	//}
 //	        }
 //	        List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
 //	        ArrayList<String> toList = new ArrayList<>();
@@ -43,7 +43,7 @@ public class CronServlet extends HttpServlet{
 //	        	String to = (String) e.getProperty("email");
 //	        	toList.add(to);
 //	        }
-//			EmailSender.sendMail("chrissquared222@gmail.com", "asdfqwer1!", text, toList);
+//			EmailSender.sendMail("chrissquared222@gmail.com", "asdfqwer1!", "chicken", toList);
 			String from = "christopher.sickler@utexas.edu";
 			String to;
 			Query query = new Query("Email");
