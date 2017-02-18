@@ -62,7 +62,7 @@ public class CronServlet extends HttpServlet{
 		        	 }
 		         }
 				// set email data
-				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text).setHtml("<strong>ChriSquared!</strong>");
+				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text);
 
 				// send your message
 				if(text != ""){

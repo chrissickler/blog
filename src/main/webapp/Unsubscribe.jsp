@@ -26,7 +26,7 @@
 
   <head>
     <title>New Post</title>
-	<link type="text/css" rel="stylesheet" href="/stylesheets/Subscribe.css" />
+	<link type="text/css" rel="stylesheet" href="/stylesheets/Unsubscribe.css" />
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,100' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="http://www.example.com/myicon.ico"/> 
