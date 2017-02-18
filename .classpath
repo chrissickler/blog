@@ -27,5 +27,7 @@
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/objectify-4.0b1.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/standard-1.1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/org.json.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
