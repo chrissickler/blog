@@ -31,10 +31,19 @@ import javax.servlet.http.HttpServletResponse;
 
 public class BlogPostServlet extends HttpServlet{
 
+
 	public static DatastoreService blogPostList = DatastoreServiceFactory.getDatastoreService();
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 	/*	UserService userService = UserServiceFactory.getUserService();
+=======
+	
+	public static DatastoreService blogPostList = DatastoreServiceFactory.getDatastoreService();
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+/*s
+		UserService userService = UserServiceFactory.getUserService();
+>>>>>>> origin/master
 		User user = userService.getCurrentUser();
      // We have one entity group per Guestbook with all Greetings residing
      // in the same entity group as the Guestbook to which they belong.
