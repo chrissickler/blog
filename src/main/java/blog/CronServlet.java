@@ -27,48 +27,48 @@ public class CronServlet extends HttpServlet{
 			//BEGIN
 			DatastoreService emailList = SubscribeServlet.emailList;
 			DatastoreService datastore = Servlet.datastore;
-			Query query = new Query();
-			String text = "";
-	        List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
-	        Date date = new Date();
-	        for(Entity post: posts){
-	        	 
-	        	if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
-	        		text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
-	        	}
-	        }
-	        List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
-	        ArrayList<String> toList = new ArrayList<>();
-	        for(Entity e: emails){
-	        	String to = (String) e.getProperty("email");
-	        	toList.add(to);
-	        }
-			EmailSender.sendMail("chrissquared222@gmail.com", "asdfqwer1!", text, toList);
-//			String from = "christopher.sickler@utexas.edu";
-//			String to;
 //			Query query = new Query();
-//			List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
-//			for(Entity e : emails){
-//				to = (String) e.getProperty("email");
-//				// set credentials
-//				Sendgrid mail = new Sendgrid("christobear","Password1!");
-//				String text = "";
-//		         List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
-//		         Date date = new Date();
-//		         for(Entity post: posts){
-//		        	 
-//		        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
-//		        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
-//		        	 }
-//		         }
-//				// set email data
-//				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text).setHtml("<strong>ChriSquared!</strong>");
-//
-//				// send your message
-//				if(text != ""){
-//					mail.send();
-//				}
-//			}
+//			String text = "";
+//	        List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
+//	        Date date = new Date();
+//	        for(Entity post: posts){
+//	        	 
+//	        	if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
+//	        		text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
+//	        	}
+//	        }
+//	        List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
+//	        ArrayList<String> toList = new ArrayList<>();
+//	        for(Entity e: emails){
+//	        	String to = (String) e.getProperty("email");
+//	        	toList.add(to);
+//	        }
+//			EmailSender.sendMail("chrissquared222@gmail.com", "asdfqwer1!", text, toList);
+			String from = "christopher.sickler@utexas.edu";
+			String to;
+			Query query = new Query();
+			List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
+			for(Entity e : emails){
+				to = (String) e.getProperty("email");
+				// set credentials
+				Sendgrid mail = new Sendgrid("christobear","Password1!");
+				String text = "";
+		         List<Entity> posts = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(100));
+		         Date date = new Date();
+		         for(Entity post: posts){
+		        	 
+		        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
+		        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
+		        	 }
+		         }
+				// set email data
+				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text).setHtml("<strong>ChriSquared!</strong>");
+
+				// send your message
+				if(text != ""){
+					mail.send();
+				}
+			}
 			//END
 		}
 		catch (Exception ex) {

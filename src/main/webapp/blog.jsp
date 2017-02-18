@@ -220,9 +220,6 @@
 		
 		
 		
-		<form action= "/blog.jsp" method= "get">
-			
-		</form>
 		
 	</body>
 <html>
