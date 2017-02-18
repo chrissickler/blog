@@ -80,7 +80,7 @@
 			
 		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
 			
-		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));
+		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(11));
 				
 		    	if (titles.isEmpty()) {
 
@@ -102,7 +102,7 @@
 			            %>
 		
 			            <div class="titles">
-			            	<blockquote>${fn:escapeXml(title_content)}</blockquote>
+			            	<a href="BlogPost.jsp"><blockquote>${fn:escapeXml(title_content)}</blockquote></a>
 			            </div>
 		
 			            <%
@@ -154,7 +154,7 @@
 		
 		    	    %>
 		
-		    	    <p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p>
+		    	    <div class="blogposts"><p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p></div>
 			
 			        <%
 		
@@ -168,7 +168,7 @@
 		
 			                %>
 		
-			                <p>An anonymous person wrote:</p>
+			                <div class="blogposts"><p>An anonymous person wrote:</p></div>
 		
 			                <%
 		
@@ -180,7 +180,7 @@
 		
 			                %>
 		
-			                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
+			                <div class="blogposts"><p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p></div>
 		
 			                <%
 		
@@ -188,7 +188,7 @@
 		
 			            %>
 		
-			            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+			            <div class="blogposts"><blockquote>${fn:escapeXml(greeting_content)}</blockquote></div>
 		
 			            <%
 		

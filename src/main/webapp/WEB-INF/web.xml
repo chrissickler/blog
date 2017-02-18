@@ -11,8 +11,9 @@
     <url-pattern>/sign</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>BlogPost.html</welcome-file>
+    <welcome-file>blog.jsp</welcome-file>
   </welcome-file-list>
+  
 	<servlet>
 		<servlet-name>Servlet</servlet-name>
 		<servlet-class>blog.Servlet</servlet-class>
@@ -30,11 +31,7 @@
 		<servlet-name>CronServlet</servlet-name>
 		<url-pattern>/cronblog</url-pattern>
 	</servlet-mapping>
-  
-	<welcome-file-list>
-		<welcome-file>blog.jsp</welcome-file>
-	</welcome-file-list>
-	
+
 	<servlet>
 		<servlet-name>SubscribeServlet</servlet-name>
 		<servlet-class>blog.SubscribeServlet</servlet-class>
@@ -44,9 +41,6 @@
 		<url-pattern>/subscribe</url-pattern>
 	</servlet-mapping>
   
-	<welcome-file-list>
-		<welcome-file>blog.jsp</welcome-file>
-	</welcome-file-list>
 	
 	<servlet>
 		<servlet-name>UnsubscribeServlet</servlet-name>
@@ -57,8 +51,5 @@
 		<url-pattern>/unsubscribe</url-pattern>
 	</servlet-mapping>
   
-	<welcome-file-list>
-		<welcome-file>blog.jsp</welcome-file>
-	</welcome-file-list>
 
 </web-app>
