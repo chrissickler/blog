@@ -38,14 +38,15 @@
 
   <body>
  	<div id="navbar">
-		<a href="http://www.google.com"><div class="navbarbuttons"; id="home">HOME</div></a>
-		<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
-		<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
-		<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>
-		<a href="NewPost.jsp"><div id="newpost">NEW POST</div></a>
-		<a href="Subscribe.jsp"><div id="subscribe">SUBSCRIBE</div></a>
-		<a href="Unsubscribe.jsp"><div id="unsubscribe">UNSUBSCRIBE</div></a>
-		<div id="signinbox"></div>
+			<a href="blog.jsp"><div class="navbarbuttons"; id="home">HOME</div></a>
+			<a href="Gallery.jsp"><div class="navbarbuttons">GALLERY</div></a>
+			<a href="AllPosts.jsp"><div class="navbarbuttons">ALL POSTS</div></a>
+			<a href="AboutUs.jsp"><div class="navbarbuttons">ABOUT US</div></a>
+			<a href="NewPost.jsp"><div id="newpost">NEW POST</div></a>
+			<a href="Subscribe.jsp"><div id="subscribe">SUBSCRIBE</div></a>	
+			<a href="Unsubscribe.jsp"><div id="unsubscribe">UNSUBSCRIBE</div></a>		
+			<div id="signinbox"></div>
+			
 		
 	</div>
 	
