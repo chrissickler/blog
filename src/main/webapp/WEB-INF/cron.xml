@@ -3,7 +3,7 @@
 	<cron>
 		<url>/cronblog</url>
 		<description>daily email update</description>
-		<schedule>every 1 minutes</schedule>
+		<schedule>every day 17:00</schedule>
 		<timezone>America/Chicago</timezone>
 	</cron>
 </cronentries>
