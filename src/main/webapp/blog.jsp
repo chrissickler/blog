@@ -54,6 +54,9 @@
 		<%
 			String title = request.getParameter("title");
 		
+	  		String userName = request.getParameter("userName");
+
+		
 			if (title == null) {
 				
 				title = "default";
@@ -70,6 +73,7 @@
 			
 		    	pageContext.setAttribute("title", title);
 			
+		    	
 		    	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 			
 		    	Key guestbookKey = KeyFactory.createKey("Guestbook", title);
@@ -104,12 +108,26 @@
 		
 			                                     titleList.get(i).getProperty("title"));
 		
-		
+					    pageContext.setAttribute("userName", userName);
+
+			            
 			            %>
 		
-			            <div class="titles">
-			            	<a href="BlogPost.jsp"><blockquote>${fn:escapeXml(title_content)}</blockquote></a>
-			            </div>
+						<form action="/viewpost" method="post">
+						
+			            	<div class="titles">
+
+								<a name="title" value="${fn:escapeXml(title_content)}">hello</a>
+								
+			            		<div id="postbutton"><input type="submit" value="${fn:escapeXml(title_content)}" /></div>			            		
+			            		
+			            		<input type="hidden" name="userName" value="${fn:escapeXml(userName)}"/>
+			            		
+			            	</div>
+
+					
+  					  </form>
+
 		
 			            <%
 		
@@ -121,7 +139,6 @@
 			
 			<%
 			
-		    String userName = request.getParameter("userName");
 		
 		    if (userName == null) {
 		

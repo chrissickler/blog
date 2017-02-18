@@ -42,7 +42,11 @@ public class BlogPostServlet extends HttpServlet{
      // Greetings for a given Guestbook.  However, the write rate to each
      // Guestbook should be limited to ~1/second.
 		String title = req.getParameter("title");
-
+		
+		if (title == null) {
+			title = "null";
+		}
+		
 		Key guestbookKey = KeyFactory.createKey("Guestbook", title);
 		Entity greeting = new Entity("Greeting", guestbookKey);
 		greeting.setProperty("title", title);
