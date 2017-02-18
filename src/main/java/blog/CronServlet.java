@@ -46,10 +46,10 @@ public class CronServlet extends HttpServlet{
 //			EmailSender.sendMail("chrissquared222@gmail.com", "asdfqwer1!", text, toList);
 			String from = "christopher.sickler@utexas.edu";
 			String to;
-			Query query = new Query();
-			List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100000));
+			Query query = new Query("Email");
+			List<Entity> emails = emailList.prepare(query).asList(FetchOptions.Builder.withLimit(100));
 			for(Entity e : emails){
-				to = (String) e.getProperty("email");
+				to = (String) e.getProperty("Email");
 				// set credentials
 				Sendgrid mail = new Sendgrid("christobear","Password1!");
 				String text = "";
@@ -57,17 +57,17 @@ public class CronServlet extends HttpServlet{
 		         Date date = new Date();
 		         for(Entity post: posts){
 		        	 
-		        	 if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
+		        	// if(date.getTime() - ((Date) post.getProperty("date")).getTime() < 86400000){
 		        		 text+= "At " + post.getProperty("date") + ", " + post.getProperty("user") + "posted: \n\t" + post.getProperty("title") + "\n\t\t" + post.getProperty("postContent") + "\n\n"; 
-		        	 }
+		        	 //}
 		         }
 				// set email data
 				mail.setTo(to).setFrom(from).setSubject("Blog posts from the past 24 hours").setText(text);
 
 				// send your message
-				if(text != ""){
+				//if(text != ""){
 					mail.send();
-				}
+				//}
 			}
 			//END
 		}
