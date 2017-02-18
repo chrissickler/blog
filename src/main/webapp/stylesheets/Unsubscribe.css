@@ -86,7 +86,8 @@
 	left: 920px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	padding-left: 19px;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 7px;
 	box-shadow: 0px 0px 2px #222222;
 	z-index: 3;
@@ -104,10 +105,11 @@
 	width: 60px;
 	position: absolute;
 	top: 12px;
-	left: 1000px;
+	left: 1010px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	padding-left: 19px;
+	padding-left: 10px;
+	padding-right: 30px;
 	padding-top: 7px;
 	box-shadow: 0px 0px 2px #222222;
 	z-index: 3;
@@ -117,6 +119,7 @@
 #unsubscribe:hover {
 	background-color: #EEEEEE;
 }
+
 #signinbox {
 	position: fixed;
 	margin-top: -57px;

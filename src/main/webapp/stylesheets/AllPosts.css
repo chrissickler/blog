@@ -121,6 +121,19 @@
 }
 
 
+#signinbox {
+	position: fixed;
+	margin-top: -57px;
+	margin-left: 807px;
+	height: 55px;
+	width: 500px;
+	background-color: black;
+	z-index: 2;
+	border: 1px solid #CACACA;
+}
+
+
+
 #navbar2 {
 	width: 100px;
 	height: 57px;
@@ -140,83 +153,117 @@
 	
 }
 
-#post {
+#banner {
+	width: 1060px;
+	height: 28px;
 	position: absolute;
-	top: 100px;
-	left: 100px;
-	z-index: 3;
+	top:90px;
+	left:110px;
+	background-color: #00a2e8;
 	color: white;
-	
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;	
+	padding-top: 10px;
+	padding-bottom: -5px;
+	padding-left: 30px;
 }
 
-#greeting {
+#leftpicback {
+	height: 380px;
+	width: 800px;
+	background-color: white;
 	position: absolute;
-	top: 100px;
-	left: 100px;
-	height: 100px;
-	width: 400px;
-	z-index: 3;
+	left: 110px;
+	top: 200px;
+	z-index: 0;
+}
+
+#leftpic img{
+	height: 380px;
+	position: absolute;
+	left: 10px;
+	top: 200px;
+	clip: rect(0px,900px,1000px,100px);
+	box-shadow: 0px 0px 10px black;
+	z-index: 1;
+}
+
+#leftpic:hover img{
+	opacity: 0.9;
+}
+
+#rightpic img {
+	width: 259px;
+	height: 380px;
+	position: absolute;
+	left: 940px;
+	top: 200px;
+	box-shadow: 0px 0px 10px black;
+	z-index: 1;
+}
+
+#rightpickback {
+	height: 380px;
+	width: 259px;
+	background-color: white;
+	position: absolute;
+	left: 940px;
+	top: 200px;
+	z-index: 0;
+}
+
+#rightpic:hover img {
+	opacity: 0.9;
+}
+
+#floatingtext {
+	position: absolute;
+	top: 170px;
+	left: 110px;
+	font-family: 'Open Sans', sans-serif;
 	color: white;
+	font-size: 14px;
+}
+
+#floatingtext2 {
+	position: absolute;
+	top: 170px;
+	left: 940px;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	font-size: 14px;
+}
+
+div.blogposts {
+	position: relative;
+	width: 500px;
+	height: 25px;
+	top: 250px;
+	left: 100px;
+	color: white;
+	z-index: 2;
+}
+
+div.titles {
+	position: relative;
+    width: 100px;
+    height: 18px;
+    top: 200px;
+    left: 900px;
+    color: white;
+    z-index: 2;
+}
+
+a:link {
+    color: white;
 }
 
 a:visited {
     color: white;
 }
 
-
-#nomessages {
-	position: absolute;
-	top: 100px;
-	left: 100px;
-	z-index: 3;
-	color: white	
+a:hover {
+    text-decoration: underline;
 }
-
-#newposttitle {
-	position: absolute;
-	top: 150px;
-	left: 100px;
-	z-index: 3;
-	
-}
-
-#newposttext {
-	position: absolute;
-	top: 200px;
-	left: 100px;
-	z-index: 3;
-}
-
-#postbutton {
-	position: absolute;
-	top: 275px;
-	left: 100px;
-	z-index: 3;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

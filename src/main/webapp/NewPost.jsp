@@ -51,7 +51,7 @@
 	</div>
 	
 	<div id="navbar2">
-			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
+			<a href="blog.jsp"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
 	</div>
 	<div id="wallpaper"></div>
 	<div id="wallpaper2"></div>
@@ -116,7 +116,7 @@ to include your name with greetings you post.</p></div>
 	
 	  <div id="newposttext"><textarea name="content" rows="3" cols="60"></textarea></div>
 
-      <div id="postbutton"><input type="submit" value="Post Greeting" /></div>
+      <div id="postbutton"><input type="submit" value="Post" /></div>
 
       <input type="hidden" name="userName" value="${fn:escapeXml(userName)}"/>
 

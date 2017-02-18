@@ -19,9 +19,13 @@
 			<a href="Unsubscribe.jsp"><div id="unsubscribe">UNSUBSCRIBE</div></a>		
 			<div id="signinbox"></div>
 			
+			
+			
 		</div>
+		
+		<div id="leftpic"; class="twomainpix"><img src="http://i.huffpost.com/gen/1939272/images/o-CHRIS-PRATT-facebook.jpg" /></div>
 		<div id="navbar2">
-			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
+			<a href="blog.jsp"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
 		</div>
 		<div id="wallpaper"></div>
 		<div id="wallpaper2"></div>

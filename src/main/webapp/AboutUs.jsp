@@ -21,7 +21,11 @@
 			
 		</div>
 		<div id="navbar2">
-			<a href="http://www.google.com"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
+			<a href="blog.jsp"><div id="chrislogo"><img src="https://i.imgur.com/TzSql7x.png" /></div></a>
+		</div>
+		<div id="aboutustext">
+			<a>This blog is all about Chris's. This blog celebrates the name Chris and all that it represents.</a>
+			<a>This blog focuses on famous Chris's and Chris's in the media. All Chris's are welcome here.</a>
 		</div>
 		<div id="wallpaper"></div>
 		<div id="wallpaper2"></div>
