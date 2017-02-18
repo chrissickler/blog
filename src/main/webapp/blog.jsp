@@ -176,9 +176,9 @@
 		                			
 		                							 greeting.getProperty("title"));
 		                	
-		                	pageContext.setAttribute("date", 
+		             //   	pageContext.setAttribute("date", 
 		                			
-		                							 greeting.getProperty("date"));
+		               // 							 greeting.getProperty("date"));
 		                	
 			                %>
 		
@@ -190,7 +190,7 @@
 		                		
 				                %>
 				        										
-								<div class="blogposts"><p>by: anonymous on ${fn:escapeXml(date)}</p></div>
+								<div class="blogposts"><p>by: anonymous on <!-- ${fn:escapeXml(date)}--></p></div>
 								
 				                <%
 		                			
@@ -198,7 +198,7 @@
 		                		
 				                %>
 				        										
-								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)} on ${fn:escapeXml(date)}</p></div>
+								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)} on <!-- ${fn:escapeXml(date)}--></p></div>
 								
 				                <%
 		                		
