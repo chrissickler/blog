@@ -41,7 +41,7 @@ public class BlogPostServlet extends HttpServlet{
 	public static DatastoreService blogPostList = DatastoreServiceFactory.getDatastoreService();
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-/*s
+/*
 		UserService userService = UserServiceFactory.getUserService();
 >>>>>>> origin/master
 		User user = userService.getCurrentUser();
@@ -62,7 +62,10 @@ public class BlogPostServlet extends HttpServlet{
 		blogPostList = DatastoreServiceFactory.getDatastoreService();
 		blogPostList.put(greeting);
 		resp.sendRedirect("/BlogPost.jsp?blogtitle=" + title);
+<<<<<<< HEAD
+
 	*/}
+
 
 }
 
