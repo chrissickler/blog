@@ -112,7 +112,7 @@
 
 			            
 			            %>
-		
+		<!-- 
 						<form action="/viewpost" method="post">
 						
 			            	<div class="titles">
@@ -127,7 +127,7 @@
 
 					
   					  </form>
-
+		-->
 		
 			            <%
 		
