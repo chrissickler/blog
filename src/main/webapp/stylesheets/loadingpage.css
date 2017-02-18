@@ -4,7 +4,7 @@
 	height: 1000px;
 	left: 0px;
 	top: 0px;
-	background: linear-gradient(white, white);
+	background: linear-gradient(black, black);
 	z-index: -1;
 }
 
@@ -15,7 +15,7 @@
 	left: 0px;
 	top: 700px;
 	z-index: -2;
-	background-color: white;
+	background-color: black;
 }
 
 #navbar {
@@ -86,7 +86,8 @@
 	left: 920px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	padding-left: 19px;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 7px;
 	box-shadow: 0px 0px 2px #222222;
 	z-index: 3;
@@ -104,10 +105,11 @@
 	width: 60px;
 	position: absolute;
 	top: 12px;
-	left: 1000px;
+	left: 1010px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	padding-left: 19px;
+	padding-left: 10px;
+	padding-right: 30px;
 	padding-top: 7px;
 	box-shadow: 0px 0px 2px #222222;
 	z-index: 3;
@@ -233,12 +235,12 @@
 }
 
 div.blogposts {
-	positioin: relative;
+	position: relative;
 	width: 500px;
-	height: 100px;
-	top: 10px;
+	height: 25px;
+	top: 250px;
 	left: 100px;
-	border: 3px solid #73AD21;
+	color: white;
 	z-index: 2;
 }
 
@@ -248,36 +250,20 @@ div.titles {
     height: 18px;
     top: 200px;
     left: 900px;
+    color: white;
     z-index: 2;
 }
 
+a:link {
+    color: white;
+}
 
+a:visited {
+    color: white;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+a:hover {
+    text-decoration: underline;
+}
 
 

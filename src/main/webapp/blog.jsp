@@ -2,7 +2,7 @@
 <%@ page import="com.googlecode.objectify.Objectify" %> 
 <%@ page import="com.googlecode.objectify.ObjectifyService" %> 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List" %>
+<%@ page import="java.util.*" %>
 <%@ page import="com.google.appengine.api.users.User" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
@@ -80,8 +80,14 @@
 			
 		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
 			
-		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(11));
+		    	List<Entity> titles = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(1000));
 				
+		    	ArrayList<Entity> titleList = new ArrayList<Entity>();
+		    
+		    	for (Entity greeting: titles) {
+		    		titleList.add(greeting);	
+		    	}
+		    	
 		    	if (titles.isEmpty()) {
 
 		    	    %>
@@ -92,11 +98,11 @@
 
 		    	} else {
 		
-			        for (Entity greeting : titles) {
+			        for (int i = titleList.size() - 1; i >= titleList.size() - 1 - 11; i--) {
 		
 			            pageContext.setAttribute("title_content",
 		
-			                                     greeting.getProperty("title"));
+			                                     titleList.get(i).getProperty("title"));
 		
 		
 			            %>
@@ -140,55 +146,54 @@
 		
 		    	Query query = new Query("Greeting", guestbookKey); //.addSort("date", Query.SortDirection.DESCENDING);
 		
-		    	List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
+		    	List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));
 		
 		    	if (greetings.isEmpty()) {
 
-		    	    %>
-		
-		    	    <div id="nomessages"><p>Guestbook '${fn:escapeXml(userName)}' has no messages.</p></div>
-		
-		    	    <%
-
 		    	} else {
-		
-		    	    %>
-		
-		    	    <div class="blogposts"><p>Messages in Guestbook '${fn:escapeXml(userName)}'.</p></div>
-			
-			        <%
 		
 			        for (Entity greeting : greetings) {
 		
-			            pageContext.setAttribute("greeting_content",
+			            pageContext.setAttribute("postContent",
 		
-			                                     greeting.getProperty("title"));
-		
-			            if (greeting.getProperty("user") == null) {
-		
-			                %>
-		
-			                <div class="blogposts"><p>An anonymous person wrote:</p></div>
-		
-			                <%
-		
-			            } else {
+			                                     greeting.getProperty("postContent"));
 		
 		                	pageContext.setAttribute("greeting_user",
 		
 			                                         greeting.getProperty("user"));
-		
+		                	
+		                	pageContext.setAttribute("title", 
+		                			
+		                							 greeting.getProperty("title"));
+		                	
 			                %>
 		
-			                <div class="blogposts"><p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p></div>
-		
+			                <div class="blogposts"><p><b>${fn:escapeXml(title)}</b></p></div>
+														
 			                <%
-		
-			            }
+							
+		                	if (greeting.getProperty("user") == null) {
+		                		
+				                %>
+				        										
+								<div class="blogposts"><p>by: anonymous</p></div>
+								
+				                <%
+		                			
+		                	} else {
+		                		
+				                %>
+				        										
+								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)}</p></div>
+								
+				                <%
+		                		
+		                	}
+			            
 		
 			            %>
 		
-			            <div class="blogposts"><blockquote>${fn:escapeXml(greeting_content)}</blockquote></div>
+			            <div class="blogposts"><blockquote>${fn:escapeXml(postContent)}</blockquote></div>
 		
 			            <%
 		

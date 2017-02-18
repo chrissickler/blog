@@ -29,9 +29,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class Servlet extends HttpServlet{
+public class BlogPostServlet extends HttpServlet{
 	
-	public static DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+	public static DatastoreService blogPostList = DatastoreServiceFactory.getDatastoreService();
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		UserService userService = UserServiceFactory.getUserService();
@@ -41,27 +41,14 @@ public class Servlet extends HttpServlet{
      // This lets us run a transactional ancestor query to retrieve all
      // Greetings for a given Guestbook.  However, the write rate to each
      // Guestbook should be limited to ~1/second.
+		String title = req.getParameter("title");
 
-		String userName = req.getParameter("userName");
-		Key guestbookKey = KeyFactory.createKey("Guestbook", userName);
-		String[] content = req.getParameterValues("content");
-		String title = content[0];
-		String postContent = content[1];
-		Date date = new Date();
+		Key guestbookKey = KeyFactory.createKey("Guestbook", title);
 		Entity greeting = new Entity("Greeting", guestbookKey);
-		greeting.setProperty("user", user);
-		if (user == null) {
-			greeting.setProperty("user", "anonymous");
-		}
-		greeting.setProperty("date", date);
 		greeting.setProperty("title", title);
-		if (title == null) {
-			greeting.setProperty("title", "untitled");
-		}
-		greeting.setProperty("postContent", postContent);
-		datastore = DatastoreServiceFactory.getDatastoreService();
-		datastore.put(greeting);
-		resp.sendRedirect("/blog.jsp?userName=" + userName);
+		blogPostList = DatastoreServiceFactory.getDatastoreService();
+		blogPostList.put(greeting);
+		resp.sendRedirect("/BlogPost.jsp?blogtitle=" + title);
 	}
 
 }
