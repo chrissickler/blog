@@ -34,7 +34,7 @@ public class BlogPostServlet extends HttpServlet{
 	public static DatastoreService blogPostList = DatastoreServiceFactory.getDatastoreService();
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-/*s
+/*
 		UserService userService = UserServiceFactory.getUserService();
 		User user = userService.getCurrentUser();
      // We have one entity group per Guestbook with all Greetings residing
@@ -54,8 +54,9 @@ public class BlogPostServlet extends HttpServlet{
 		blogPostList = DatastoreServiceFactory.getDatastoreService();
 		blogPostList.put(greeting);
 		resp.sendRedirect("/BlogPost.jsp?blogtitle=" + title);
-	}
 */
+	}
+
 }
 
 
