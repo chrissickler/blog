@@ -14,14 +14,6 @@
     <welcome-file>blog.jsp</welcome-file>
   </welcome-file-list>
   
-  <servlet>
-    <servlet-name>viewpost</servlet-name>
-    <servlet-class>blog.BlogPostServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>viewpost</servlet-name>
-    <url-pattern>/viewpost</url-pattern>
-  </servlet-mapping>
   
 	<servlet>
 		<servlet-name>Servlet</servlet-name>

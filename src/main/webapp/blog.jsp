@@ -102,7 +102,14 @@
 
 		    	} else {
 		
-			        for (int i = titleList.size() - 1; i >= 0; i--) {
+		    		int temp = 0;
+		    		
+		    		if (titleList.size() < 11)
+		    			temp = 0;
+		    		else
+		    			temp = titleList.size() - 11;
+		    		
+			        for (int i = titleList.size() - 1; i >= temp; i--) {
 		
 			            pageContext.setAttribute("title_content",
 		
@@ -112,23 +119,9 @@
 
 			            
 			            %>
-		<!-- 
-						<form action="/viewpost" method="post">
-						
-			            	<div class="titles">
-
-								<a name="title" value="${fn:escapeXml(title_content)}">hello</a>
-								
-			            		<div id="postbutton"><input type="submit" value="${fn:escapeXml(title_content)}" /></div>			            		
-			            		
-			            		<input type="hidden" name="userName" value="${fn:escapeXml(userName)}"/>
-			            		
-			            	</div>
-
-					
-  					  </form>
-		-->
-		
+ 			            <div class="titles">
+ 			            	<blockquote>${fn:escapeXml(title_content)}</blockquote>
+  			            </div>		
 			            <%
 		
 			        }
@@ -183,6 +176,10 @@
 		                			
 		                							 greeting.getProperty("title"));
 		                	
+		                	pageContext.setAttribute("date", 
+		                			
+		                							 greeting.getProperty("date"));
+		                	
 			                %>
 		
 			                <div class="blogposts"><p><b>${fn:escapeXml(title)}</b></p></div>
@@ -193,7 +190,7 @@
 		                		
 				                %>
 				        										
-								<div class="blogposts"><p>by: anonymous</p></div>
+								<div class="blogposts"><p>by: anonymous on ${fn:escapeXml(date)}</p></div>
 								
 				                <%
 		                			
@@ -201,7 +198,7 @@
 		                		
 				                %>
 				        										
-								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)}</p></div>
+								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)} on ${fn:escapeXml(date)}</p></div>
 								
 				                <%
 		                		
