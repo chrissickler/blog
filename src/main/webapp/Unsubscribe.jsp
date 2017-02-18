@@ -34,7 +34,7 @@
 
   <body>
  	<div id="navbar">
-		<a href="http://www.google.com"><div class="navbarbuttons"; id="home">HOME</div></a>
+		<a href="blog.jsp"><div class="navbarbuttons"; id="home">HOME</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">GALLERY</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">CATEGORIES</div></a>
 		<a href="http://www.google.com"><div class="navbarbuttons">ABOUT US</div></a>

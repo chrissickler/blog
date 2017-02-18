@@ -200,7 +200,7 @@
 		                		
 				                %>
 				        										
-								<div class="blogposts"><p>by: ${fn:escapeXml(greeting_user.nickname)} on ${fn:escapeXml(date)}</p></div>
+								<div class="blogposts"><p>by: ${fn:escapeXml(user)} on ${fn:escapeXml(date)}</p></div>
 								
 				                <%
 		                		
