@@ -72,6 +72,7 @@ public class CronServlet extends HttpServlet{
 			//END
 		}
 		catch (Exception ex) {
+			ex.printStackTrace();
 			//Log any exceptions in your Cron Job
 		}
 	}
